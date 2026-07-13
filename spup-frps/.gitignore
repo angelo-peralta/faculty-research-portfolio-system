@@ -1,0 +1,77 @@
+# v0 runtime files
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+
+# Dependencies
+/node_modules/
+
+# Next.js and production output
+/.next/
+/out/
+/build/
+
+# TypeScript and tool caches
+*.tsbuildinfo
+next-env.d.ts
+.eslintcache
+/.cache/
+/.turbo/
+
+# Environment files and credentials
+.env*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Logs and runtime diagnostics
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+/.codex-temp/
+
+# Local agent and editor state
+/.agents/
+/.codex/
+/.direnv/
+/.idea/
+/.vscode/
+*.swp
+*.swo
+
+# Tests and coverage
+/coverage/
+/.nyc_output/
+/playwright-report/
+/test-results/
+/blob-report/
+
+# Local application data and generated uploads
+/data/legacy/
+/data/mysql-backups/
+/public/uploads/faculty-assets/
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+*.sql.gz
+
+# Temporary files
+/tmp/
+/temp/
+*.tmp
+*.temp
+*.bak
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Generated clients and deployment state
+/lib/generated/prisma/
+/.vercel/

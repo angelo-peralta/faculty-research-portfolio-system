@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Faculty Research Portfolio</title>
+  <desc id="desc">A green app icon with an open portfolio mark and FRP initials.</desc>
+  <rect width="512" height="512" rx="112" fill="#14622e"/>
+  <path d="M116 146c0-17.7 14.3-32 32-32h216c17.7 0 32 14.3 32 32v220c0 17.7-14.3 32-32 32H148c-17.7 0-32-14.3-32-32V146Z" fill="#f7f5ea"/>
+  <path d="M148 126h216c11 0 20 9 20 20v34H128v-34c0-11 9-20 20-20Z" fill="#f4c542"/>
+  <path d="M169 224h174M169 266h134M169 308h94" fill="none" stroke="#14622e" stroke-width="26" stroke-linecap="round"/>
+  <path d="M321 282l74 74-44 13-17 42-74-74 61-55Z" fill="#f4c542" stroke="#14622e" stroke-width="16" stroke-linejoin="round"/>
+  <text x="256" y="462" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="800" fill="#f7f5ea" letter-spacing="4">FRP</text>
+</svg>

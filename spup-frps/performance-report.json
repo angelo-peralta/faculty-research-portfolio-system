@@ -1,0 +1,3602 @@
+{
+  "environment": {
+    "testedAt": "2026-07-03T07:37:27.858Z",
+    "platform": "win32",
+    "arch": "x64",
+    "nodeVersion": "v24.17.0",
+    "mode": "production next start",
+    "browser": "Playwright Chromium",
+    "database": "MySQL via DATABASE_URL (sample lookup ok)",
+    "authentication": "no authenticated Playwright storage state supplied; protected pages expected to redirect to /login",
+    "baseUrl": "http://localhost:3002",
+    "limitations": [
+      "Authenticated admin/faculty pages cannot be fully timed without an authenticated browser storage state.",
+      "Client-side navigation timing requires an authenticated shell with visible links; this unauthenticated run records cold/warm loads only."
+    ]
+  },
+  "samples": {
+    "facultyId": "cfe028fc-ec9a-4782-8051-daf47b57b5e2",
+    "facultyName": "Ada Alodia C. Bansig",
+    "department": "BEU",
+    "source": "mysql",
+    "error": null
+  },
+  "routeInventory": {
+    "pageRoutes": [
+      {
+        "route": "/",
+        "label": "Root redirect",
+        "filePath": "app/page.tsx",
+        "kind": "page",
+        "visibility": "public",
+        "dataLoading": false,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [],
+        "testRoute": "/",
+        "sampleNote": "",
+        "tested": "tested",
+        "notes": [
+          "may block on server data"
+        ]
+      },
+      {
+        "route": "/admin/analytics",
+        "label": "Admin analytics",
+        "filePath": "app/admin/analytics/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": true,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "aggregate/dashboard data",
+          "chart rendering"
+        ],
+        "testRoute": "/admin/analytics",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "may block on server data",
+          "tables/lists",
+          "charts/stats"
+        ]
+      },
+      {
+        "route": "/admin/dashboard",
+        "label": "Admin dashboard",
+        "filePath": "app/admin/dashboard/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": true,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "aggregate/dashboard data"
+        ],
+        "testRoute": "/admin/dashboard",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "may block on server data",
+          "tables/lists",
+          "charts/stats",
+          "forms"
+        ]
+      },
+      {
+        "route": "/admin/decision-support",
+        "label": "Decision support",
+        "filePath": "app/admin/decision-support/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": true,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "aggregate/dashboard data"
+        ],
+        "testRoute": "/admin/decision-support",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "may block on server data",
+          "tables/lists",
+          "charts/stats",
+          "forms"
+        ]
+      },
+      {
+        "route": "/admin/departments",
+        "label": "Departments",
+        "filePath": "app/admin/departments/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": true,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [],
+        "testRoute": "/admin/departments",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "may block on server data",
+          "tables/lists",
+          "charts/stats"
+        ]
+      },
+      {
+        "route": "/admin/departments/[department]",
+        "label": "Department detail",
+        "filePath": "app/admin/departments/[department]/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": true,
+        "hasForms": true,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "parallel data fetch",
+          "server data wait"
+        ],
+        "testRoute": "/admin/departments/BEU",
+        "sampleNote": "department: BEU",
+        "tested": "auth blocked",
+        "notes": [
+          "department: BEU",
+          "may block on server data",
+          "tables/lists",
+          "charts/stats",
+          "forms"
+        ]
+      },
+      {
+        "route": "/admin/engagements",
+        "label": "Admin engagements list",
+        "filePath": "app/admin/engagements/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": [
+          "parallel data fetch"
+        ],
+        "testRoute": "/admin/engagements",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "tables/lists",
+          "forms"
+        ]
+      },
+      {
+        "route": "/admin/faculty",
+        "label": "Admin faculty list",
+        "filePath": "app/admin/faculty/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": [],
+        "testRoute": "/admin/faculty",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "tables/lists",
+          "forms"
+        ]
+      },
+      {
+        "route": "/admin/faculty/[id]",
+        "label": "Admin faculty detail",
+        "filePath": "app/admin/faculty/[id]/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ],
+        "testRoute": "/admin/faculty/cfe028fc-ec9a-4782-8051-daf47b57b5e2",
+        "sampleNote": "faculty user: Ada Alodia C. Bansig",
+        "tested": "auth blocked",
+        "notes": [
+          "faculty user: Ada Alodia C. Bansig",
+          "may block on server data",
+          "tables/lists",
+          "forms"
+        ]
+      },
+      {
+        "route": "/admin/notifications",
+        "label": "Admin notifications",
+        "filePath": "app/admin/notifications/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "large page size"
+        ],
+        "testRoute": "/admin/notifications",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "may block on server data",
+          "tables/lists"
+        ]
+      },
+      {
+        "route": "/admin/publications",
+        "label": "Admin publications list",
+        "filePath": "app/admin/publications/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": [
+          "parallel data fetch"
+        ],
+        "testRoute": "/admin/publications",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "tables/lists",
+          "forms"
+        ]
+      },
+      {
+        "route": "/admin/research",
+        "label": "Admin research list",
+        "filePath": "app/admin/research/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": [
+          "parallel data fetch"
+        ],
+        "testRoute": "/admin/research",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "tables/lists",
+          "forms"
+        ]
+      },
+      {
+        "route": "/admin/settings",
+        "label": "Admin settings",
+        "filePath": "app/admin/settings/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": true,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "settings bootstrap"
+        ],
+        "testRoute": "/admin/settings",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "may block on server data",
+          "tables/lists",
+          "charts/stats",
+          "forms"
+        ]
+      },
+      {
+        "route": "/faculty/dashboard",
+        "label": "Faculty dashboard",
+        "filePath": "app/faculty/dashboard/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": false,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": true,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": [
+          "aggregate/dashboard data"
+        ],
+        "testRoute": "/faculty/dashboard",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "tables/lists",
+          "charts/stats"
+        ]
+      },
+      {
+        "route": "/faculty/education",
+        "label": "Faculty education",
+        "filePath": "app/faculty/education/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": [],
+        "testRoute": "/faculty/education",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "tables/lists",
+          "forms"
+        ]
+      },
+      {
+        "route": "/faculty/engagements",
+        "label": "Faculty engagements",
+        "filePath": "app/faculty/engagements/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": [],
+        "testRoute": "/faculty/engagements",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "tables/lists",
+          "forms"
+        ]
+      },
+      {
+        "route": "/faculty/notifications",
+        "label": "Faculty notifications",
+        "filePath": "app/faculty/notifications/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "large page size"
+        ],
+        "testRoute": "/faculty/notifications",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "may block on server data",
+          "tables/lists"
+        ]
+      },
+      {
+        "route": "/faculty/profile",
+        "label": "Faculty profile",
+        "filePath": "app/faculty/profile/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": [
+          "parallel data fetch"
+        ],
+        "testRoute": "/faculty/profile",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "tables/lists",
+          "forms"
+        ]
+      },
+      {
+        "route": "/faculty/publications",
+        "label": "Faculty publications",
+        "filePath": "app/faculty/publications/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": [],
+        "testRoute": "/faculty/publications",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "tables/lists",
+          "forms"
+        ]
+      },
+      {
+        "route": "/faculty/research",
+        "label": "Faculty research",
+        "filePath": "app/faculty/research/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": [],
+        "testRoute": "/faculty/research",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "tables/lists",
+          "forms"
+        ]
+      },
+      {
+        "route": "/faculty/research-titles",
+        "label": "Faculty research titles",
+        "filePath": "app/faculty/research-titles/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": false,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": [],
+        "testRoute": "/faculty/research-titles",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "tables/lists",
+          "forms"
+        ]
+      },
+      {
+        "route": "/faculty/settings",
+        "label": "Faculty settings",
+        "filePath": "app/faculty/settings/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": [],
+        "testRoute": "/faculty/settings",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "tables/lists",
+          "forms"
+        ]
+      },
+      {
+        "route": "/login",
+        "label": "Login page",
+        "filePath": "app/login/page.tsx",
+        "kind": "page",
+        "visibility": "public",
+        "dataLoading": false,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": [],
+        "testRoute": "/login",
+        "sampleNote": "",
+        "tested": "tested",
+        "notes": [
+          "forms"
+        ]
+      },
+      {
+        "route": "/manifest.webmanifest",
+        "label": "",
+        "filePath": "app/manifest.ts",
+        "kind": "metadata",
+        "visibility": "public",
+        "dataLoading": false,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": [],
+        "testRoute": "/manifest.webmanifest",
+        "sampleNote": "",
+        "tested": "tested",
+        "notes": []
+      },
+      {
+        "route": "/onboarding",
+        "label": "Onboarding page",
+        "filePath": "app/onboarding/page.tsx",
+        "kind": "page",
+        "visibility": "public",
+        "dataLoading": false,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": [],
+        "testRoute": "/onboarding",
+        "sampleNote": "",
+        "tested": "tested",
+        "notes": [
+          "tables/lists"
+        ]
+      },
+      {
+        "route": "/select-role",
+        "label": "Role selector",
+        "filePath": "app/select-role/page.tsx",
+        "kind": "page",
+        "visibility": "protected",
+        "dataLoading": false,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": true,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": [],
+        "testRoute": "/select-role",
+        "sampleNote": "",
+        "tested": "auth blocked",
+        "notes": [
+          "charts/stats",
+          "forms"
+        ]
+      }
+    ],
+    "apiRoutes": [
+      {
+        "route": "/api/admin/admin-users",
+        "label": "",
+        "filePath": "app/api/admin/admin-users/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait",
+          "settings bootstrap"
+        ]
+      },
+      {
+        "route": "/api/admin/admin-users/[id]",
+        "label": "",
+        "filePath": "app/api/admin/admin-users/[id]/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/analytics",
+        "label": "",
+        "filePath": "app/api/admin/analytics/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": true,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "aggregate/dashboard data"
+        ]
+      },
+      {
+        "route": "/api/admin/assets/sign",
+        "label": "",
+        "filePath": "app/api/admin/assets/sign/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/admin/broadcasts",
+        "label": "",
+        "filePath": "app/api/admin/broadcasts/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/admin/dashboard",
+        "label": "",
+        "filePath": "app/api/admin/dashboard/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": true,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "aggregate/dashboard data"
+        ]
+      },
+      {
+        "route": "/api/admin/decision-support",
+        "label": "",
+        "filePath": "app/api/admin/decision-support/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": true,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "aggregate/dashboard data"
+        ]
+      },
+      {
+        "route": "/api/admin/departments",
+        "label": "",
+        "filePath": "app/api/admin/departments/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/admin/departments/[department]",
+        "label": "",
+        "filePath": "app/api/admin/departments/[department]/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/engagements",
+        "label": "",
+        "filePath": "app/api/admin/engagements/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/exports/[kind]",
+        "label": "",
+        "filePath": "app/api/admin/exports/[kind]/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/faculty",
+        "label": "",
+        "filePath": "app/api/admin/faculty/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/faculty/[id]",
+        "label": "",
+        "filePath": "app/api/admin/faculty/[id]/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/faculty/[id]/education",
+        "label": "",
+        "filePath": "app/api/admin/faculty/[id]/education/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/faculty/[id]/education/[entryId]",
+        "label": "",
+        "filePath": "app/api/admin/faculty/[id]/education/[entryId]/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/faculty/[id]/engagements",
+        "label": "",
+        "filePath": "app/api/admin/faculty/[id]/engagements/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/faculty/[id]/engagements/[engagementId]",
+        "label": "",
+        "filePath": "app/api/admin/faculty/[id]/engagements/[engagementId]/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/faculty/[id]/publications",
+        "label": "",
+        "filePath": "app/api/admin/faculty/[id]/publications/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/faculty/[id]/publications/[publicationId]",
+        "label": "",
+        "filePath": "app/api/admin/faculty/[id]/publications/[publicationId]/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/faculty/[id]/research",
+        "label": "",
+        "filePath": "app/api/admin/faculty/[id]/research/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/faculty/[id]/research/[researchTitleId]",
+        "label": "",
+        "filePath": "app/api/admin/faculty/[id]/research/[researchTitleId]/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/invites",
+        "label": "",
+        "filePath": "app/api/admin/invites/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/invites/[id]",
+        "label": "",
+        "filePath": "app/api/admin/invites/[id]/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/notifications",
+        "label": "",
+        "filePath": "app/api/admin/notifications/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/admin/notifications/read",
+        "label": "",
+        "filePath": "app/api/admin/notifications/read/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/admin/publications",
+        "label": "",
+        "filePath": "app/api/admin/publications/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/research",
+        "label": "",
+        "filePath": "app/api/admin/research/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/admin/settings/bootstrap",
+        "label": "",
+        "filePath": "app/api/admin/settings/bootstrap/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "settings bootstrap"
+        ]
+      },
+      {
+        "route": "/api/admin/settings/decision-support",
+        "label": "",
+        "filePath": "app/api/admin/settings/decision-support/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": true,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "aggregate/dashboard data"
+        ]
+      },
+      {
+        "route": "/api/admin/workspace",
+        "label": "",
+        "filePath": "app/api/admin/workspace/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/auth/microsoft",
+        "label": "",
+        "filePath": "app/api/auth/microsoft/route.ts",
+        "kind": "api",
+        "visibility": "public",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/auth/sign-out",
+        "label": "",
+        "filePath": "app/api/auth/sign-out/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/faculty/search",
+        "label": "",
+        "filePath": "app/api/faculty/search/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/me",
+        "label": "",
+        "filePath": "app/api/me/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/me/assets/sign",
+        "label": "",
+        "filePath": "app/api/me/assets/sign/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/me/bootstrap",
+        "label": "",
+        "filePath": "app/api/me/bootstrap/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": [
+          "parallel data fetch"
+        ]
+      },
+      {
+        "route": "/api/me/completion",
+        "label": "",
+        "filePath": "app/api/me/completion/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/me/education",
+        "label": "",
+        "filePath": "app/api/me/education/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/me/education/[id]",
+        "label": "",
+        "filePath": "app/api/me/education/[id]/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/me/engagements",
+        "label": "",
+        "filePath": "app/api/me/engagements/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/me/engagements/[id]",
+        "label": "",
+        "filePath": "app/api/me/engagements/[id]/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/me/export/csv",
+        "label": "",
+        "filePath": "app/api/me/export/csv/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/me/export/json",
+        "label": "",
+        "filePath": "app/api/me/export/json/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/me/notifications",
+        "label": "",
+        "filePath": "app/api/me/notifications/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/me/notifications/read",
+        "label": "",
+        "filePath": "app/api/me/notifications/read/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/me/preferences",
+        "label": "",
+        "filePath": "app/api/me/preferences/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/me/profile",
+        "label": "",
+        "filePath": "app/api/me/profile/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/me/publications",
+        "label": "",
+        "filePath": "app/api/me/publications/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/me/publications/[id]",
+        "label": "",
+        "filePath": "app/api/me/publications/[id]/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/me/push-subscriptions",
+        "label": "",
+        "filePath": "app/api/me/push-subscriptions/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/me/research",
+        "label": "",
+        "filePath": "app/api/me/research/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/me/research/[id]",
+        "label": "",
+        "filePath": "app/api/me/research/[id]/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "dynamic",
+        "requiresSampleData": true,
+        "likelyBlocking": true,
+        "suspiciousPatterns": [
+          "server data wait"
+        ]
+      },
+      {
+        "route": "/api/me/workspace",
+        "label": "",
+        "filePath": "app/api/me/workspace/route.ts",
+        "kind": "api",
+        "visibility": "protected",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": true,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/publications/lookup",
+        "label": "",
+        "filePath": "app/api/publications/lookup/route.ts",
+        "kind": "api",
+        "visibility": "public",
+        "dataLoading": true,
+        "hasTablesOrLists": true,
+        "hasChartsOrStats": false,
+        "hasForms": true,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/api/version",
+        "label": "",
+        "filePath": "app/api/version/route.ts",
+        "kind": "api",
+        "visibility": "public",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": []
+      },
+      {
+        "route": "/auth/callback",
+        "label": "",
+        "filePath": "app/auth/callback/route.ts",
+        "kind": "api",
+        "visibility": "public",
+        "dataLoading": true,
+        "hasTablesOrLists": false,
+        "hasChartsOrStats": false,
+        "hasForms": false,
+        "dynamic": "static",
+        "requiresSampleData": false,
+        "likelyBlocking": false,
+        "suspiciousPatterns": []
+      }
+    ],
+    "pagesDirectoryPresent": false
+  },
+  "pageResults": [
+    {
+      "route": "/",
+      "testRoute": "/",
+      "filePath": "app/page.tsx",
+      "visibility": "public",
+      "dataLoading": false,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 1213,
+      "warmLoadMs": 786,
+      "coldContentVisibleMs": 114,
+      "warmContentVisibleMs": 89,
+      "clientNavigationMs": null,
+      "requestCount": 21,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 450,
+        "contentLength": 10096
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 114,
+        "contentLength": 336
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "tested",
+      "finalUrl": "http://localhost:3002/",
+      "notes": [
+        "code scan: route may block render on server data"
+      ]
+    },
+    {
+      "route": "/login",
+      "testRoute": "/login",
+      "filePath": "app/login/page.tsx",
+      "visibility": "public",
+      "dataLoading": false,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 727,
+      "warmLoadMs": 709,
+      "coldContentVisibleMs": 109,
+      "warmContentVisibleMs": 102,
+      "clientNavigationMs": null,
+      "requestCount": 24,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/login",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 101,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 14,
+        "contentLength": 336
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "tested",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": []
+    },
+    {
+      "route": "/manifest.webmanifest",
+      "testRoute": "/manifest.webmanifest",
+      "filePath": "app/manifest.ts",
+      "visibility": "public",
+      "dataLoading": false,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 521,
+      "warmLoadMs": 516,
+      "coldContentVisibleMs": null,
+      "warmContentVisibleMs": null,
+      "clientNavigationMs": null,
+      "requestCount": 1,
+      "apiRequestCount": 0,
+      "slowestRequest": {
+        "url": "http://localhost:3002/manifest.webmanifest",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 10,
+        "contentLength": 1153
+      },
+      "slowestApiRequest": null,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "status": "tested",
+      "finalUrl": "http://localhost:3002/manifest.webmanifest",
+      "notes": []
+    },
+    {
+      "route": "/onboarding",
+      "testRoute": "/onboarding",
+      "filePath": "app/onboarding/page.tsx",
+      "visibility": "public",
+      "dataLoading": false,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 1052,
+      "warmLoadMs": 1038,
+      "coldContentVisibleMs": 882,
+      "warmContentVisibleMs": 887,
+      "clientNavigationMs": null,
+      "requestCount": 28,
+      "apiRequestCount": 4,
+      "slowestRequest": {
+        "url": "http://localhost:3002/onboarding",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 93,
+        "contentLength": 4377
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 10,
+        "contentLength": 336
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=jLriTut4RS4nok3I",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=jLriTut4RS4nok3I",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=jLriTut4RS4nok3I",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "tested",
+      "finalUrl": "http://localhost:3002/",
+      "notes": []
+    },
+    {
+      "route": "/admin/analytics",
+      "testRoute": "/admin/analytics",
+      "filePath": "app/admin/analytics/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 744,
+      "warmLoadMs": 727,
+      "coldContentVisibleMs": 92,
+      "warmContentVisibleMs": 102,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/admin/analytics",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 124,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 12,
+        "contentLength": 336
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "code scan: route may block render on server data",
+        "code scan: aggregate/dashboard data, chart rendering",
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/admin/dashboard",
+      "testRoute": "/admin/dashboard",
+      "filePath": "app/admin/dashboard/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 729,
+      "warmLoadMs": 710,
+      "coldContentVisibleMs": 113,
+      "warmContentVisibleMs": 90,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/admin/dashboard",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 106,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 10,
+        "contentLength": 336
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "code scan: route may block render on server data",
+        "code scan: aggregate/dashboard data",
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/admin/decision-support",
+      "testRoute": "/admin/decision-support",
+      "filePath": "app/admin/decision-support/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 721,
+      "warmLoadMs": 729,
+      "coldContentVisibleMs": 102,
+      "warmContentVisibleMs": 103,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/admin/decision-support",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 98,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 9,
+        "contentLength": 336
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "code scan: route may block render on server data",
+        "code scan: aggregate/dashboard data",
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/admin/departments",
+      "testRoute": "/admin/departments",
+      "filePath": "app/admin/departments/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 722,
+      "warmLoadMs": 716,
+      "coldContentVisibleMs": 102,
+      "warmContentVisibleMs": 97,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/admin/departments",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 101,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 10,
+        "contentLength": 336
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "code scan: route may block render on server data",
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/admin/departments/[department]",
+      "testRoute": "/admin/departments/BEU",
+      "filePath": "app/admin/departments/[department]/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "dynamic",
+      "requiresSampleData": true,
+      "sampleNote": "department: BEU",
+      "coldLoadMs": 722,
+      "warmLoadMs": 731,
+      "coldContentVisibleMs": 98,
+      "warmContentVisibleMs": 111,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/admin/departments/BEU",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 88,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 9,
+        "contentLength": 336
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "code scan: route may block render on server data",
+        "code scan: parallel data fetch, server data wait",
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/admin/engagements",
+      "testRoute": "/admin/engagements",
+      "filePath": "app/admin/engagements/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 757,
+      "warmLoadMs": 713,
+      "coldContentVisibleMs": 120,
+      "warmContentVisibleMs": 111,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/admin/engagements",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 131,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 9,
+        "contentLength": 336
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "code scan: parallel data fetch",
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/admin/faculty",
+      "testRoute": "/admin/faculty",
+      "filePath": "app/admin/faculty/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 723,
+      "warmLoadMs": 697,
+      "coldContentVisibleMs": 100,
+      "warmContentVisibleMs": 100,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/admin/faculty",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 94,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 10,
+        "contentLength": 336
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/admin/faculty/[id]",
+      "testRoute": "/admin/faculty/cfe028fc-ec9a-4782-8051-daf47b57b5e2",
+      "filePath": "app/admin/faculty/[id]/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "dynamic",
+      "requiresSampleData": true,
+      "sampleNote": "faculty user: Ada Alodia C. Bansig",
+      "coldLoadMs": 733,
+      "warmLoadMs": 710,
+      "coldContentVisibleMs": 102,
+      "warmContentVisibleMs": 100,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/admin/faculty/cfe028fc-ec9a-4782-8051-daf47b57b5e2",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 99,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 9,
+        "contentLength": 336
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "code scan: route may block render on server data",
+        "code scan: server data wait",
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/admin/notifications",
+      "testRoute": "/admin/notifications",
+      "filePath": "app/admin/notifications/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 723,
+      "warmLoadMs": 735,
+      "coldContentVisibleMs": 104,
+      "warmContentVisibleMs": 105,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/admin/notifications",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 85,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 9,
+        "contentLength": 336
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "code scan: route may block render on server data",
+        "code scan: large page size",
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/admin/publications",
+      "testRoute": "/admin/publications",
+      "filePath": "app/admin/publications/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 733,
+      "warmLoadMs": 729,
+      "coldContentVisibleMs": 106,
+      "warmContentVisibleMs": 122,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/admin/publications",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 100,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 10,
+        "contentLength": 336
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "code scan: parallel data fetch",
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/admin/research",
+      "testRoute": "/admin/research",
+      "filePath": "app/admin/research/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 734,
+      "warmLoadMs": 718,
+      "coldContentVisibleMs": 119,
+      "warmContentVisibleMs": 100,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/admin/research",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 116,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 11,
+        "contentLength": 336
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "code scan: parallel data fetch",
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/admin/settings",
+      "testRoute": "/admin/settings",
+      "filePath": "app/admin/settings/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 687,
+      "warmLoadMs": 668,
+      "coldContentVisibleMs": 127,
+      "warmContentVisibleMs": 101,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/admin/settings",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 113,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 9,
+        "contentLength": 358
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "code scan: route may block render on server data",
+        "code scan: settings bootstrap",
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/faculty/dashboard",
+      "testRoute": "/faculty/dashboard",
+      "filePath": "app/faculty/dashboard/page.tsx",
+      "visibility": "protected",
+      "dataLoading": false,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 685,
+      "warmLoadMs": 677,
+      "coldContentVisibleMs": 72,
+      "warmContentVisibleMs": 100,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/faculty/dashboard",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 92,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 8,
+        "contentLength": 358
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "code scan: aggregate/dashboard data",
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/faculty/education",
+      "testRoute": "/faculty/education",
+      "filePath": "app/faculty/education/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 691,
+      "warmLoadMs": 665,
+      "coldContentVisibleMs": 98,
+      "warmContentVisibleMs": 102,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/faculty/education",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 100,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 9,
+        "contentLength": 358
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/faculty/engagements",
+      "testRoute": "/faculty/engagements",
+      "filePath": "app/faculty/engagements/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 696,
+      "warmLoadMs": 700,
+      "coldContentVisibleMs": 110,
+      "warmContentVisibleMs": 109,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/faculty/engagements",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 88,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 8,
+        "contentLength": 358
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/faculty/notifications",
+      "testRoute": "/faculty/notifications",
+      "filePath": "app/faculty/notifications/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 751,
+      "warmLoadMs": 698,
+      "coldContentVisibleMs": 117,
+      "warmContentVisibleMs": 112,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/faculty/notifications",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 116,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 78,
+        "contentLength": 358
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "code scan: route may block render on server data",
+        "code scan: large page size",
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/faculty/profile",
+      "testRoute": "/faculty/profile",
+      "filePath": "app/faculty/profile/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 701,
+      "warmLoadMs": 680,
+      "coldContentVisibleMs": 109,
+      "warmContentVisibleMs": 112,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/faculty/profile",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 113,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 10,
+        "contentLength": 358
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "code scan: parallel data fetch",
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/faculty/publications",
+      "testRoute": "/faculty/publications",
+      "filePath": "app/faculty/publications/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 688,
+      "warmLoadMs": 677,
+      "coldContentVisibleMs": 70,
+      "warmContentVisibleMs": 115,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/faculty/publications",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 85,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 7,
+        "contentLength": 358
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/faculty/research",
+      "testRoute": "/faculty/research",
+      "filePath": "app/faculty/research/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 694,
+      "warmLoadMs": 673,
+      "coldContentVisibleMs": 112,
+      "warmContentVisibleMs": 99,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/faculty/research",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 103,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 9,
+        "contentLength": 358
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/faculty/research-titles",
+      "testRoute": "/faculty/research-titles",
+      "filePath": "app/faculty/research-titles/page.tsx",
+      "visibility": "protected",
+      "dataLoading": false,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 671,
+      "warmLoadMs": 667,
+      "coldContentVisibleMs": 105,
+      "warmContentVisibleMs": 95,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/faculty/research-titles",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 92,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 9,
+        "contentLength": 358
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/?_rsc=_H_fFy2_Q06N8BA7",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/faculty/settings",
+      "testRoute": "/faculty/settings",
+      "filePath": "app/faculty/settings/page.tsx",
+      "visibility": "protected",
+      "dataLoading": true,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 685,
+      "warmLoadMs": 675,
+      "coldContentVisibleMs": 101,
+      "warmContentVisibleMs": 101,
+      "clientNavigationMs": null,
+      "requestCount": 25,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/faculty/settings",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 103,
+        "contentLength": 4066
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 10,
+        "contentLength": 358
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/?_rsc=sW2A7HEmFQnSVIMx",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/login",
+      "notes": [
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    },
+    {
+      "route": "/select-role",
+      "testRoute": "/select-role",
+      "filePath": "app/select-role/page.tsx",
+      "visibility": "protected",
+      "dataLoading": false,
+      "dynamic": "static",
+      "requiresSampleData": false,
+      "sampleNote": "",
+      "coldLoadMs": 2554,
+      "warmLoadMs": 2546,
+      "coldContentVisibleMs": 2511,
+      "warmContentVisibleMs": 2510,
+      "clientNavigationMs": null,
+      "requestCount": 20,
+      "apiRequestCount": 2,
+      "slowestRequest": {
+        "url": "http://localhost:3002/select-role",
+        "method": "GET",
+        "resourceType": "document",
+        "timingMs": 96,
+        "contentLength": 4373
+      },
+      "slowestApiRequest": {
+        "url": "http://localhost:3002/api/me",
+        "method": "GET",
+        "resourceType": "fetch",
+        "timingMs": 7,
+        "contentLength": 358
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/speed-insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:3002/_vercel/insights/script.js",
+          "method": "GET",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "status": "auth blocked",
+      "finalUrl": "http://localhost:3002/select-role",
+      "notes": [
+        "measurement: redirected to /login without authenticated browser session"
+      ]
+    }
+  ],
+  "apiFindings": [],
+  "frontendIssues": [
+    "/: console errors observed: Failed to load resource: the server responded with a status of 404 (Not Found) | Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "/login: console errors observed: Failed to load resource: the server responded with a status of 401 (Unauthorized) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/onboarding: console errors observed: Failed to load resource: the server responded with a status of 401 (Unauthorized) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/admin/analytics: console errors observed: Failed to load resource: the server responded with a status of 401 (Unauthorized) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/admin/dashboard: console errors observed: Failed to load resource: the server responded with a status of 401 (Unauthorized) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/admin/decision-support: console errors observed: Failed to load resource: the server responded with a status of 401 (Unauthorized) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/admin/departments: console errors observed: Failed to load resource: the server responded with a status of 401 (Unauthorized) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/admin/departments/[department]: console errors observed: Failed to load resource: the server responded with a status of 401 (Unauthorized) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/admin/engagements: console errors observed: Failed to load resource: the server responded with a status of 401 (Unauthorized) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/admin/faculty: console errors observed: Failed to load resource: the server responded with a status of 401 (Unauthorized) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/admin/faculty/[id]: console errors observed: Failed to load resource: the server responded with a status of 401 (Unauthorized) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/admin/notifications: console errors observed: Failed to load resource: the server responded with a status of 401 (Unauthorized) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/admin/publications: console errors observed: Failed to load resource: the server responded with a status of 401 (Unauthorized) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/admin/research: console errors observed: Failed to load resource: the server responded with a status of 401 (Unauthorized) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/admin/settings: console errors observed: Failed to load resource: the server responded with a status of 429 (Too Many Requests) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/faculty/dashboard: console errors observed: Failed to load resource: the server responded with a status of 429 (Too Many Requests) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/faculty/education: console errors observed: Failed to load resource: the server responded with a status of 429 (Too Many Requests) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/faculty/engagements: console errors observed: Failed to load resource: the server responded with a status of 429 (Too Many Requests) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/faculty/notifications: console errors observed: Failed to load resource: the server responded with a status of 404 (Not Found) | Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+    "/faculty/profile: console errors observed: Failed to load resource: the server responded with a status of 429 (Too Many Requests) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/faculty/publications: console errors observed: Failed to load resource: the server responded with a status of 429 (Too Many Requests) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/faculty/research: console errors observed: Failed to load resource: the server responded with a status of 429 (Too Many Requests) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/faculty/research-titles: console errors observed: Failed to load resource: the server responded with a status of 429 (Too Many Requests) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/faculty/settings: console errors observed: Failed to load resource: the server responded with a status of 429 (Too Many Requests) | Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "/select-role: console errors observed: Failed to load resource: the server responded with a status of 429 (Too Many Requests) | Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "navigationIssues": [
+    "/admin/analytics: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/admin/dashboard: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/admin/decision-support: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/admin/departments: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/admin/departments/[department]: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/admin/engagements: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/admin/faculty: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/admin/faculty/[id]: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/admin/notifications: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/admin/publications: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/admin/research: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/admin/settings: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/faculty/dashboard: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/faculty/education: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/faculty/engagements: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/faculty/notifications: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/faculty/profile: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/faculty/publications: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/faculty/research: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/faculty/research-titles: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/faculty/settings: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed.",
+    "/select-role: protected page redirected to /login during unauthenticated baseline; authenticated timing still needed."
+  ],
+  "priorityOptimizations": [
+    {
+      "priority": "Priority 1",
+      "filePath": "app/admin/settings/page.tsx",
+      "route": "/admin/settings",
+      "problem": "Code scan indicates server data can block route render.",
+      "recommendedFix": "Benchmark authenticated load first, then split shell render from data fetch or stream expensive sections if confirmed slow.",
+      "expectedImprovement": "Faster perceived navigation; exact gain requires authenticated timing.",
+      "risk": "medium"
+    },
+    {
+      "priority": "Priority 1",
+      "filePath": "app/admin/faculty/[id]/page.tsx",
+      "route": "/admin/faculty/[id]",
+      "problem": "Code scan indicates server data can block route render.",
+      "recommendedFix": "Benchmark authenticated load first, then split shell render from data fetch or stream expensive sections if confirmed slow.",
+      "expectedImprovement": "Faster perceived navigation; exact gain requires authenticated timing.",
+      "risk": "medium"
+    },
+    {
+      "priority": "Priority 2",
+      "filePath": "app/admin/dashboard/page.tsx",
+      "route": "/admin/dashboard",
+      "problem": "Code scan indicates server data can block route render.",
+      "recommendedFix": "Benchmark authenticated load first, then split shell render from data fetch or stream expensive sections if confirmed slow.",
+      "expectedImprovement": "Faster perceived navigation; exact gain requires authenticated timing.",
+      "risk": "low-medium"
+    },
+    {
+      "priority": "Priority 2",
+      "filePath": "app/admin/analytics/page.tsx",
+      "route": "/admin/analytics",
+      "problem": "Code scan indicates server data can block route render.",
+      "recommendedFix": "Benchmark authenticated load first, then split shell render from data fetch or stream expensive sections if confirmed slow.",
+      "expectedImprovement": "Faster perceived navigation; exact gain requires authenticated timing.",
+      "risk": "low-medium"
+    },
+    {
+      "priority": "Priority 2",
+      "filePath": "app/admin/decision-support/page.tsx",
+      "route": "/admin/decision-support",
+      "problem": "Code scan indicates server data can block route render.",
+      "recommendedFix": "Benchmark authenticated load first, then split shell render from data fetch or stream expensive sections if confirmed slow.",
+      "expectedImprovement": "Faster perceived navigation; exact gain requires authenticated timing.",
+      "risk": "low-medium"
+    },
+    {
+      "priority": "Priority 2",
+      "filePath": "app/faculty/dashboard/page.tsx",
+      "route": "/faculty/dashboard",
+      "problem": "High-value protected route likely loads dashboard/settings/detail data.",
+      "recommendedFix": "Benchmark authenticated load first, then split shell render from data fetch or stream expensive sections if confirmed slow.",
+      "expectedImprovement": "Faster perceived navigation; exact gain requires authenticated timing.",
+      "risk": "low-medium"
+    },
+    {
+      "priority": "Priority 2",
+      "filePath": "app/faculty/settings/page.tsx",
+      "route": "/faculty/settings",
+      "problem": "High-value protected route likely loads dashboard/settings/detail data.",
+      "recommendedFix": "Benchmark authenticated load first, then split shell render from data fetch or stream expensive sections if confirmed slow.",
+      "expectedImprovement": "Faster perceived navigation; exact gain requires authenticated timing.",
+      "risk": "medium"
+    }
+  ],
+  "summary": {
+    "fastestPage": "/manifest.webmanifest (521 ms)",
+    "slowestPage": "/ (1213 ms)",
+    "averageColdLoadMs": 878.25,
+    "averageWarmLoadMs": 762.25,
+    "averageNavigationMs": null,
+    "mostCommonBottleneck": "Measured route timing; see slowest request column",
+    "biggestQuickWin": "Optimize the slowest measured authenticated page first"
+  }
+}
