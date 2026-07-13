@@ -1,0 +1,355 @@
+FACULTY RESEARCH PORTFOLIO SYSTEM
+PROPRIETARY MULTI-INSTITUTION SOFTWARE LICENSE
+
+Version 1.0
+Copyright © 2025–2026 Angelo Pambid Peralta
+All Rights Reserved.
+
+NOTICE OF COPYRIGHT REGISTRATION
+
+The original institutional implementation of this Software, titled
+“SPUP Faculty Research Portfolio,” was registered with the Intellectual
+Property Office of the Philippines under Copyright Registration
+Certificate No. 2026-04854-N.
+
+The registered authorship claim covers the source code of the original
+SPUP implementation.
+
+This notice does not represent that every subsequent version,
+institutional implementation, modification, configuration, or derivative
+edition has been separately registered under the same certificate.
+
+1. DEFINITIONS
+
+For purposes of this License:
+
+a. “Software” or “Platform” means the Faculty Research Portfolio System,
+   including its source code, shared modules, database schemas,
+   documentation, user-interface materials, system architecture,
+   configuration files, application programming interfaces, and related
+   materials, to the extent protected by applicable law.
+
+b. “Institutional Implementation” means a version of the Platform that
+   is configured, branded, customized, deployed, or maintained for a
+   particular school, university, organization, or other institution.
+
+c. “Institution-Specific Addendum” means a separate written agreement
+   granting a named institution permission to use a particular
+   Institutional Implementation.
+
+d. “Copyright Owner” or “Licensor” means Angelo Pambid Peralta, unless
+   ownership is modified by a separate valid written agreement.
+
+e. “Authorized Institution” means an institution specifically named in
+   a valid Institution-Specific Addendum.
+
+f. “Authorized User” means an employee, officer, faculty member,
+   administrator, student, contractor, or other person authorized to
+   access an Institutional Implementation solely for the Authorized
+   Institution’s approved internal operations.
+
+2. OWNERSHIP
+
+The Platform and its protected source code, documentation, architecture,
+shared components, interfaces, and related materials are owned by the
+Copyright Owner, except for:
+
+a. Third-party components governed by their respective licenses;
+
+b. Institutional data owned or controlled by an Authorized Institution;
+
+c. Institutional names, seals, logos, trademarks, documents, and
+   materials owned or controlled by an Authorized Institution; and
+
+d. Materials whose ownership is established differently under an
+   applicable employment agreement, commissioning agreement,
+   contribution agreement, institutional intellectual-property policy,
+   or other written contract.
+
+No provision of this License transfers ownership of the Platform or its
+source code to any institution, user, contractor, contributor, or third
+party.
+
+3. NO GENERAL OR PUBLIC LICENSE
+
+The Platform is proprietary software.
+
+Access to, possession of, or receipt of a copy of the Platform does not
+grant any person or institution permission to use, reproduce, modify,
+publish, distribute, sublicense, sell, deploy, host, or commercially
+exploit it.
+
+Permission to use an Institutional Implementation must be granted under:
+
+a. A valid Institution-Specific Addendum; or
+
+b. Another written agreement signed or expressly approved by the
+   Copyright Owner.
+
+This Software is not licensed under the MIT License, GNU General Public
+License, GNU Affero General Public License, Apache License, or any other
+open-source license.
+
+4. INSTITUTION-SPECIFIC LICENSES
+
+Each Authorized Institution must have its own Institution-Specific
+Addendum.
+
+An Institution-Specific Addendum must identify, at minimum:
+
+a. The authorized institution;
+
+b. The authorized implementation;
+
+c. The authorized purposes of use;
+
+d. The authorized users and environments;
+
+e. Whether source-code access is permitted;
+
+f. Whether modification or maintenance is permitted;
+
+g. The applicable duration and termination conditions; and
+
+h. Any fees, support obligations, hosting terms, or other special
+   conditions.
+
+Rights granted to one institution do not extend to another institution,
+campus, affiliate, foundation, hospital, company, or third party unless
+the relevant agreement expressly states otherwise.
+
+If an Institution-Specific Addendum conflicts with this License, the
+Addendum shall govern only for the institution and implementation
+specifically identified in that Addendum.
+
+5. RESTRICTIONS
+
+Except when expressly authorized by an Institution-Specific Addendum or
+another written agreement, no person or organization may:
+
+a. Copy or reproduce the source code, except for copies reasonably
+   required for authorized backup, testing, maintenance, and disaster
+   recovery;
+
+b. Publish, disclose, distribute, transmit, or make the source code
+   available to unauthorized persons;
+
+c. Upload the Platform or any protected portion of it to a public
+   repository, public file-sharing service, or other publicly accessible
+   location;
+
+d. Sell, sublicense, lease, rent, assign, transfer, or commercially
+   exploit the Platform;
+
+e. Use the Platform to provide services to another institution,
+   organization, business, or third party;
+
+f. Operate the Platform as a commercial software-as-a-service offering
+   without written authorization;
+
+g. Create, distribute, or operate an unauthorized competing or
+   derivative system substantially based on the Platform;
+
+h. Remove, obscure, or alter copyright notices, authorship information,
+   license notices, registration details, or other proprietary notices;
+
+i. Circumvent access controls, security mechanisms, licensing
+   restrictions, or technical limitations;
+
+j. Use an institution’s name, seal, logo, trademark, data, documents, or
+   confidential materials without that institution’s authorization; or
+
+k. Represent that an Institutional Implementation is sponsored,
+   authorized, endorsed, or owned by an institution when no such
+   authorization exists.
+
+6. DEVELOPMENT, MODIFICATION, AND CONTRIBUTIONS
+
+Only the Copyright Owner and persons expressly authorized by the
+Copyright Owner may make material changes to the global Platform.
+
+An Authorized Institution may make configuration, deployment, or
+maintenance changes only to the extent permitted by its
+Institution-Specific Addendum.
+
+No transfer of ownership in a contribution, modification, extension, or
+improvement shall be presumed merely because it is submitted, discussed,
+tested, or included in a development environment.
+
+Ownership and licensing of contributions made by employees,
+contractors, institutions, or third parties should be governed by a
+separate written contribution, employment, commissioning, or
+intellectual-property agreement.
+
+7. INSTITUTIONAL NAMES AND BRANDING
+
+The global Platform must use generic branding unless an institution has
+authorized the use of its name, seal, logo, trademarks, colors, or other
+identity materials.
+
+Institution-specific branding may be used only:
+
+a. In the implementation authorized for that institution;
+
+b. For the duration and purposes authorized by the institution; and
+
+c. In accordance with the institution’s applicable branding,
+   communications, and intellectual-property policies.
+
+A license to use the Platform does not grant ownership of an
+institution’s name, logo, seal, trademarks, or other branding.
+
+8. INSTITUTIONAL DATA
+
+Each Authorized Institution retains ownership and control of its own
+institutional data, including:
+
+a. Faculty and employee records;
+
+b. Research records and publication information;
+
+c. Uploaded documents;
+
+d. User-account information;
+
+e. Institutional reports;
+
+f. Configuration data; and
+
+g. Other information entered into or generated through its authorized
+   use of the Platform.
+
+Ownership of institutional data does not constitute ownership of the
+Platform or its source code.
+
+The Platform must not be used to disclose, transfer, combine, or reuse
+one institution’s data for another institution without proper
+authorization and a lawful basis.
+
+9. CONFIDENTIALITY AND SECURITY
+
+Source code, credentials, environment variables, API keys, database
+credentials, deployment configurations, security documentation, and
+other non-public technical information must be treated as confidential.
+
+Authorized persons must implement reasonable measures to prevent:
+
+a. Unauthorized access;
+
+b. Accidental disclosure;
+
+c. Credential exposure;
+
+d. Public repository publication;
+
+e. Data loss; and
+
+f. Unauthorized copying or redistribution.
+
+Passwords, secret keys, production credentials, and confidential
+institutional data must not be committed to the source-code repository.
+
+10. THIRD-PARTY COMPONENTS
+
+Third-party libraries, frameworks, packages, fonts, icons, images,
+services, APIs, and other components included in or used by the Platform
+remain subject to their respective licenses and terms.
+
+This License does not modify, replace, or override any valid third-party
+license.
+
+The user or deploying institution is responsible for complying with all
+applicable third-party terms.
+
+11. SUPPORT, HOSTING, AND MAINTENANCE
+
+This License does not automatically require the Copyright Owner to
+provide:
+
+a. Hosting;
+
+b. Technical support;
+
+c. Maintenance;
+
+d. Security monitoring;
+
+e. Data migration;
+
+f. Training;
+
+g. Custom development; or
+
+h. Service-level guarantees.
+
+Any such services must be defined in a separate written agreement,
+service agreement, maintenance agreement, or Institution-Specific
+Addendum.
+
+12. NO WARRANTY
+
+To the extent permitted by applicable law, the Platform is provided
+“as is” and “as available,” without warranties of any kind, express or
+implied.
+
+The Copyright Owner does not guarantee that the Platform will be
+uninterrupted, error-free, completely secure, compatible with every
+environment, or suitable for every intended purpose.
+
+13. LIMITATION OF LIABILITY
+
+To the extent permitted by applicable law, the Copyright Owner shall not
+be liable for indirect, incidental, special, consequential, exemplary,
+or punitive damages arising from the use of or inability to use the
+Platform.
+
+Any additional liability, warranty, indemnity, or service obligations
+must be stated in a separate written agreement.
+
+14. TERMINATION
+
+Permission granted under an Institution-Specific Addendum may be
+suspended or terminated when:
+
+a. The institution materially violates this License or its Addendum;
+
+b. The source code is disclosed or distributed without authorization;
+
+c. The Platform is used outside the authorized institutional scope;
+
+d. Required fees remain unpaid, when applicable; or
+
+e. Termination is otherwise permitted under the applicable written
+   agreement.
+
+Upon termination, the institution must:
+
+a. Stop unauthorized use of the Platform;
+
+b. Remove or return unauthorized copies of the source code;
+
+c. Disable access for unauthorized users;
+
+d. Protect and properly dispose of confidential technical information;
+   and
+
+e. Preserve or export institutional data as required by law and the
+   applicable agreement.
+
+15. GOVERNING LAW
+
+This License shall be governed by and interpreted in accordance with the
+laws of the Republic of the Philippines.
+
+16. SEVERABILITY
+
+If any provision of this License is found unenforceable, the remaining
+provisions shall continue in effect to the extent permitted by law.
+
+17. CONTACT
+
+For licensing, institutional deployment, modification, redistribution,
+commercial use, or other permissions, contact:
+
+Angelo Pambid Peralta
+Copyright Owner and Licensor
